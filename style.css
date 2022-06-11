@@ -85,7 +85,39 @@ body{
     cursor: pointer;
 }
 
-.box-selecionado{
+.box-selecionado-prato{
+    border: 5px solid rgb(50, 183, 47);
+    margin-right: 16px;
+    margin-top: 17px;
+    width: 172px;
+    height: 216px;
+    background-color: #fafafa;
+    box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-selecionado-bebida{
+    border: 5px solid rgb(50, 183, 47);
+    margin-right: 16px;
+    margin-top: 17px;
+    width: 172px;
+    height: 216px;
+    background-color: #fafafa;
+    box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-selecionado-sobremesa{
     border: 5px solid rgb(50, 183, 47);
     margin-right: 16px;
     margin-top: 17px;

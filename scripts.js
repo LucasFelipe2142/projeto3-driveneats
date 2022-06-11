@@ -2,6 +2,9 @@
 let contadorClickPrato = 0;
 let contadorClickBebida = 0;
 let contadorClickSobremesa = 0;
+let precoPrato = 0;
+let precoBebida = 0;
+let precoSobremesa = 0;
 
 function mudarButton(){
     const button = document.querySelector('.buton-footer');
@@ -9,176 +12,69 @@ function mudarButton(){
     button.innerHTML = "Fechar pedido";    
 }
 
-//sção pratos
+//seção pratos
 
-function clicarPrato1(){
-  
-        const mudarBox = document.querySelector('.prato1');
-        mudarBox.classList.add("box-selecionado");
-        contadorClickPrato++;
-   
-        const removeBox2 = document.querySelector('.prato2');
-        removeBox2.classList.remove("box-selecionado");
-        
-        const removeBox3 = document.querySelector('.prato3');
-        removeBox3.classList.remove("box-selecionado");
-        
-        const removeBox4 = document.querySelector('.prato4');
-        removeBox4.classList.remove("box-selecionado");
 
-        const removeBox5 = document.querySelector('.prato5');
-        removeBox5.classList.remove("box-selecionado");
-         
+function clicarPrato(box, x){
+    contadorClickPrato++;
 
     if(contadorClickPrato === 1 && contadorClickBebida === 1 && contadorClickSobremesa === 1){
         mudarButton();
     }
-}
 
-function clicarPrato2(){
+    const select = document.querySelector('.box-selecionado-prato');
     
-        const mudarBox = document.querySelector('.prato2');
-        mudarBox.classList.add("box-selecionado");
-
-        const removeBox1 = document.querySelector('.prato1');
-        removeBox1.classList.remove("box-selecionado");
-        
-        const removeBox3 = document.querySelector('.prato3');
-        removeBox3.classList.remove("box-selecionado");
-        
-        const removeBox4 = document.querySelector('.prato4');
-        removeBox4.classList.remove("box-selecionado");
-
-        const removeBox5 = document.querySelector('.prato5');
-        removeBox5.classList.remove("box-selecionado");
-
-    if(contadorClickPrato === 1 && contadorClickBebida === 1 && contadorClickSobremesa === 1){
-        mudarButton();
+    if(select !== null){
+        select.classList.remove("box-selecionado-prato");
+        contadorClickPrato--;
     }
+
+    box.classList.add("box-selecionado-prato");
+    precoPrato = x;
+
 }
 
-function clicarPrato3(){
-        const mudarBox = document.querySelector('.prato3');
-        mudarBox.classList.add("box-selecionado");
-        
-        const removeBox1 = document.querySelector('.prato1');
-        removeBox1.classList.remove("box-selecionado");
-        
-        const removeBox2 = document.querySelector('.prato2');
-        removeBox2.classList.remove("box-selecionado");
-        
-        const removeBox4 = document.querySelector('.prato4');
-        removeBox4.classList.remove("box-selecionado");
 
-        const removeBox5 = document.querySelector('.prato5');
-        removeBox5.classList.remove("box-selecionado");
+function clicarBebida(box){
+    contadorClickBebida++;
 
     if(contadorClickPrato === 1 && contadorClickBebida === 1 && contadorClickSobremesa === 1){
         mudarButton();
     }
+
+    const select = document.querySelector('.box-selecionado-bebida');
+    
+    if(select !== null){
+        select.classList.remove("box-selecionado-bebida");
+        contadorClickBebida--;
+    }
+
+    box.classList.add("box-selecionado-bebida");
+    precoBebida = x;
+
 }
 
-function clicarPrato4(){
-        const mudarBox = document.querySelector('.prato4');
-        mudarBox.classList.add("box-selecionado");
-           
-        const removeBox1 = document.querySelector('.prato1');
-        removeBox1.classList.remove("box-selecionado");
-        
-        const removeBox2 = document.querySelector('.prato2');
-        removeBox2.classList.remove("box-selecionado");
-        
-        const removeBox3 = document.querySelector('.prato3');
-        removeBox3.classList.remove("box-selecionado");
-
-        const removeBox5 = document.querySelector('.prato5');
-        removeBox5.classList.remove("box-selecionado");
-
+function clicarSobremesa(box){
+    contadorClickSobremesa++;
+    
     if(contadorClickPrato === 1 && contadorClickBebida === 1 && contadorClickSobremesa === 1){
         mudarButton();
     }
+
+    const select = document.querySelector('.box-selecionado-sobremesa');
+    
+    if(select !== null){
+        select.classList.remove("box-selecionado-sobremesa");
+        contadorClickSobremesa--;
+    }
+
+    box.classList.add("box-selecionado-sobremesa");
+    
+    precoSobremesa = x;
+
 }
 
-function clicarPrato5(){
-        const mudarBox = document.querySelector('.prato5');
-        mudarBox.classList.add("box-selecionado");
-        contadorClickPrato++;
 
-        const removeBox1 = document.querySelector('.prato1');
-        removeBox1.classList.remove("box-selecionado");
-        
-        const removeBox2 = document.querySelector('.prato2');
-        removeBox2.classList.remove("box-selecionado");
-        
-        const removeBox3 = document.querySelector('.prato3');
-        removeBox3.classList.remove("box-selecionado");
-        
-        const removeBox4 = document.querySelector('.prato4');
-        removeBox4.classList.remove("box-selecionado");
-
-    if(contadorClickPrato === 1 && contadorClickBebida === 1 && contadorClickSobremesa === 1){
-        mudarButton();
-    }
-}
-
-//seção bebidas
-
-function clicarBebida1(){
-    if(contadorClickPrato === 0){
-        const mudarBox = document.querySelector('.bebeida1');
-        mudarBox.classList.add("box-selecionado");
-        contadorClickBebida++;
-    }
-
-    if(contadorClickPrato === 1 && contadorClickBebida === 1 && contadorClickSobremesa === 1){
-        mudarButton();
-    }
-}
-
-function clicarBebida2(){
-    if(contadorClickPrato === 0){
-        const mudarBox = document.querySelector('.bebeida2');
-        mudarBox.classList.add("box-selecionado");
-        contadorClickBebida++;
-    }
-
-    if(contadorClickPrato === 1 && contadorClickBebida === 1 && contadorClickSobremesa === 1){
-        mudarButton();
-    }
-}
-
-function clicarBebida3(){
-    if(contadorClickPrato === 0){
-        const mudarBox = document.querySelector('.bebeida3');
-        mudarBox.classList.add("box-selecionado");
-        contadorClickBebida++;
-    }
-
-    if(contadorClickPrato === 1 && contadorClickBebida === 1 && contadorClickSobremesa === 1){
-        mudarButton();
-    }
-}
-
-function clicarBebida4(){
-    if(contadorClickPrato === 0){
-        const mudarBox = document.querySelector('.bebeida4');
-        mudarBox.classList.add("box-selecionado");
-        contadorClickBebida++;
-    }
-
-    if(contadorClickPrato === 1 && contadorClickBebida === 1 && contadorClickSobremesa === 1){
-        mudarButton();
-    }
-}
-
-function clicarBebida5(){
-    if(contadorClickPrato === 0){
-        const mudarBox = document.querySelector('.bebeida5');
-        mudarBox.classList.add("box-selecionado");
-        contadorClickBebida++;
-    }
-
-    if(contadorClickPrato === 1 && contadorClickBebida === 1 && contadorClickSobremesa === 1){
-        mudarButton();
-    }
+function clicarBotaoEnviar(){
+    
 }
