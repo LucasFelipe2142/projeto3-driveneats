@@ -149,7 +149,7 @@ body{
 }
 
 
-.box img{
+.img-box{
     width: 144px;
     height: 87px;
     border-radius: 9px;
@@ -177,6 +177,29 @@ body{
     color: black;
 }
 
+.icon{
+    Width: 15.44px;
+    Height: 15.44px;
+    z-index: 1;
+    margin-left: 80%;
+
+}
+
+.box>img{
+    opacity: 0;
+}
+
+.box-selecionado-prato>img{
+    opacity: 1;
+}
+
+.box-selecionado-bebida>img{
+    opacity: 1;
+}
+
+.box-selecionado-sobremesa>img{
+    opacity: 1;
+}
 /* edição do footer */
 
 .footer-com-botao{
@@ -220,4 +243,7 @@ body{
     z-index: 1;
 }
 
+.apagado{
+    display: none;
+}
 

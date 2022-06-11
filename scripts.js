@@ -7,15 +7,29 @@ let precoBebida = 0;
 let precoSobremesa = 0;
 
 function mudarButton(){
-    const button = document.querySelector('.buton-footer');
-    button.classList.remove("buton-footer");
-    button.innerHTML = "Fechar pedido";    
+    const button = document.querySelector('.buton-footer-verde');
+    const buttonGrey = document.querySelector('.buton-footer');
+    button.classList.remove("apagado");   
+    buttonGrey.classList.add("apagado");
 }
 
+
+function clicarBotaoEnviar(){
+    let preco = precoBebida + precoPrato + precoSobremesa;
+    let mensagem = "Olá, gostaria de fazer o pedido: \n\
+    - Prato: Frango Yin Yang \n\
+    - Bebida: Coquinha Gelada \n\
+    - Sobremesa: Pudim \n\
+    Total: R$ " + preco; 
+    link = "https://wa.me/?text=" + encodeURIComponent(mensagem);
+    window.open(link);
+}
 //seção pratos
 
 
 function clicarPrato(box, x){
+
+    precoPrato = x;
     contadorClickPrato++;
 
     if(contadorClickPrato === 1 && contadorClickBebida === 1 && contadorClickSobremesa === 1){
@@ -25,17 +39,21 @@ function clicarPrato(box, x){
     const select = document.querySelector('.box-selecionado-prato');
     
     if(select !== null){
+
         select.classList.remove("box-selecionado-prato");
         contadorClickPrato--;
     }
 
     box.classList.add("box-selecionado-prato");
-    precoPrato = x;
+    icon.classList.add("selecionado");
+   
+    
 
 }
 
 
-function clicarBebida(box){
+function clicarBebida(box, x){
+    precoBebida = x;
     contadorClickBebida++;
 
     if(contadorClickPrato === 1 && contadorClickBebida === 1 && contadorClickSobremesa === 1){
@@ -50,11 +68,11 @@ function clicarBebida(box){
     }
 
     box.classList.add("box-selecionado-bebida");
-    precoBebida = x;
 
 }
 
-function clicarSobremesa(box){
+function clicarSobremesa(box, x){
+    precoSobremesa = x;
     contadorClickSobremesa++;
     
     if(contadorClickPrato === 1 && contadorClickBebida === 1 && contadorClickSobremesa === 1){
@@ -70,11 +88,6 @@ function clicarSobremesa(box){
 
     box.classList.add("box-selecionado-sobremesa");
     
-    precoSobremesa = x;
-
-}
-
-
-function clicarBotaoEnviar(){
     
+
 }
